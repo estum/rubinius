@@ -24,7 +24,13 @@
 #else
 #include <llvm/Support/IRBuilder.h>
 #endif
-#include <llvm/ExecutionEngine/JIT.h>
+
+#if RBX_LLVM_USE_MCJIT
+#include "llvm/ExecutionEngine/MCJIT.h"
+#else
+#include "llvm/ExecutionEngine/JIT.h"
+#endif
+
 #include <llvm/CodeGen/MachineCodeInfo.h>
 #include <llvm/Transforms/IPO/PassManagerBuilder.h>
 #include <llvm/Pass.h>

@@ -81,6 +81,10 @@ namespace rubinius {
     factory.setEngineKind(EngineKind::JIT);
     factory.setErrorStr(&error);
 
+#if RBX_LLVM_USE_MCJIT
+    factory.setUseMCJIT(true);
+#endif
+
 #if RBX_LLVM_API_VER > 300
     llvm::TargetOptions opts;
     opts.NoFramePointerElim = true;

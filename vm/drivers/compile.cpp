@@ -31,7 +31,13 @@
 #include "llvm/Target/TargetMachine.h"
 #include "llvm/LinkAllPasses.h"
 #include "llvm/ModuleProvider.h"
+
+#if RBX_LLVM_USE_MCJIT
+#include "llvm/ExecutionEngine/MCJIT.h"
+#else
 #include "llvm/ExecutionEngine/JIT.h"
+#endif
+
 #include "llvm/ExecutionEngine/Interpreter.h"
 #include "llvm/ExecutionEngine/GenericValue.h"
 #include <llvm/Support/CommandLine.h>

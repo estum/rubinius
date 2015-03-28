@@ -1585,6 +1585,7 @@ int main() { return tgetnum(""); }
 #define RBX_LDSHAREDXX       "#{@ldsharedxx}"
 #define RBX_SIZEOF_LONG      #{sizeof("long")}
 #define RBX_LLVM_API_VER     #{@llvm_api_version}
+#define RBX_LLVM_USE_MCJIT   #{@llvm_api_version >= 306}
 #define RBX_LIBC             "#{@libc}"
 #define RBX_HAVE_LCHMOD      #{@have_lchmod}
 #define RBX_HAVE_LCHOWN      #{@have_lchown}
