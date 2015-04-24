@@ -29,7 +29,7 @@ end
 
 def release_date
   if git_directory
-    m = `git show --format="%ci" HEAD`.match(/^(\d+-\d+-\d+)/)
+    m = `git show -s --format="%ci" HEAD`.match(/^(\d+-\d+-\d+)/)
     date = m[1]
   end
 
